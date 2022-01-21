@@ -8,6 +8,9 @@ import {BrowserRouter} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 import { ThemeProvider } from 'react-bootstrap';
 
+//styles
+// import "./styles/index.scss"
+
 
 ReactDOM.render(
     <BrowserRouter>

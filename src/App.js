@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Container className='mainContainer' fluid>
         <Switch>
-            <Route path="/landing" component={Landing}/>
+            <Route path="/pishkhan" component={Landing}/>
             <Route path="/login-by-username" component={UsernameLogin}/>
             <Route path="/" component={MobileLogin}/>
         </Switch>

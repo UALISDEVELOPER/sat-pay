@@ -1,0 +1,22 @@
+.main-container{
+    width: 100%;
+    padding-top: 70px;
+    overflow-x: hidden;
+    @media only screen and (min-width: 770px) {
+        .main-content{
+            float: left;
+            height: 1200px;
+            border: blue 2px solid;
+            width: 100%;
+            margin-right: 60px;
+        }
+    }
+    @media only screen and (max-width: 770px) {
+        .main-content{
+            float: left;
+            height: 1200px;
+            border: blue 2px solid;
+            width: 100%;
+        }
+    }
+}
