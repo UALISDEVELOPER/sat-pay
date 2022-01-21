@@ -1,0 +1,18 @@
+.mainContainer{
+    background-color: #EAEAEB;
+    height: 100vh;
+    word-spacing: -1px;
+    input{
+        text-align: right;
+    }
+    ::placeholder {
+        text-align: right;
+    }
+    @font-face {
+        font-family: “yekan”;
+        src:url(./font/Yekan/Yekan.eot);
+        src:url(./font/Yekan/Yekan.ttf)format("ttf"),url(./font/Yekan/Yekan.woff)format("woff");
+        font-weight: normal;
+        font-style: normal
+    }
+}
