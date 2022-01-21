@@ -1,0 +1,26 @@
+.header{
+    background-color: #2A78A8;
+    height: 60px;
+    text-align: right;
+    .sidebar-button{
+        float: right;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .userDiv{
+        color: #ffffff;
+        font-size: 17px;
+        width: fit-content;
+        float: right !important;
+        margin-left: 25px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .creditDiv{
+        margin-top: 5px;
+        color: #ffff;
+        font-size: 22px;
+        width: fit-content;
+        float: right !important;
+    }
+}

@@ -1,10 +1,13 @@
 import React from 'react';
 
+//components
+import Header from './Header';
+
 const Landing = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header/>
+        </>
     );
 };
 
