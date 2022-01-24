@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //bootstrap
 import { Col, Row , Container} from "react-bootstrap"
@@ -12,25 +12,30 @@ import "./styles/landing.scss";
 
 const Landing = () => {
 
-    const [sidebarExpand, setSidebarExpand] = useState(false);
+    const [sidebarExpand, setSidebarExpand] = useState(true);
     const expandSidebar = ()=>{
         if (sidebarExpand){
             setSidebarExpand(false)
         }else{
             setSidebarExpand(true)
         }
+        // console.log("kjsdjkhjk");
     }
     // following function help to expand and contract the sidebar
 
+    useEffect(()=>{
+        console.log(sidebarExpand);
+    })
+
     return (
         <>
+            <Sidebar sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} callFunc={expandSidebar} />
             <Header callFunc={expandSidebar} sidebarExpand={sidebarExpand}/>
-            <Sidebar sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} />
             <Container className='main-container' fluid>
                 <Row>
-                    <Col  className='main-content'>
+                    <Col id='main-content' className='main-content'>
                         <Row>
-
+                            
                         </Row>
                     </Col>
                 </Row>

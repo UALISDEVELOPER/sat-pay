@@ -1,29 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { Link , useHistory} from "react-router-dom";
+
+//sidebar internal dashboard list
+import {dashboardList} from "./listGroupItems/InternalList";
 
 //bootstrap
-import {Tooltip, OverlayTrigger, Image } from "react-bootstrap"
-
+import {Tooltip, OverlayTrigger, Image } from "react-bootstrap";
 
 //styles
 import "./styles/sidebar.scss";
 
-//images
-import dashboard from "./styles/img/dashboard.png";
-import organizationalCredit from "./styles/img/Organizational-credit.svg";
-import socialSecurity from "./styles/img/Social-Security.png"
-import openBanking from "./styles/img/open-banking.svg";
-import postOffice from "./styles/img/post-office.png";
-import validation from "./styles/img/validation.png";
-import cardIssuance from "./styles/img/Card-issuance.png";
-import wallet from "./styles/img/wallet.svg";
-import leasing from "./styles/img/leasing.png";
-import fishingCheck from "./styles/img/Fishing-check.png";
-import billAndCharge from "./styles/img/Bills-and-charges.png";
-import logout from "./styles/img/logout.png";
+//sidebar listgroup array
+import {listGroup} from "./listGroupItems/listGroupItem";
+const MainSidebarListGroup = listGroup;
 
 
+const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
 
-const Sidebar = ({sidebarExpand ,setSidebarExpand}) => {
+    const [chosenList, setChoseList] = useState(dashboardList);
+    
+
+    const history = useHistory();
+    useEffect(()=>{
+        chosenList==="logout" && console.log("akshdkjasj");
+    },[chosenList]);
+
+    //////
+    // const [mainSidebarListGroup , setMainSidebarListGroup] = useState(listGroup);
+    
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
            {props}
@@ -42,150 +47,58 @@ const Sidebar = ({sidebarExpand ,setSidebarExpand}) => {
 
 
     useEffect(()=>{
-        const sidebar = document.getElementById("expand");
-        if(sidebarExpand){
-            sidebar.removeAttribute("class");
-            sidebar.classList.add("sidebar-expand-true")
+        const expandedSidebar = document.getElementById("expand");
+        const mainSidebar = document.getElementById("mainSidebar") ;
+        // const [mainSidebarWidth, setMainSidebarWidth] = useState( document.getElementById("mainSidebar").style.width="0px");
+        if(sidebarExpand ){
+            expandedSidebar.removeAttribute("class");
+            expandedSidebar.classList.add("sidebar-expand-true");
+            mainSidebar.classList.add("mainSidebar-xs");
         }else{
-            sidebar.removeAttribute("class");
-            sidebar.classList.add("sidebar-expand-false")
+            expandedSidebar.removeAttribute("class");
+            expandedSidebar.classList.add("sidebar-expand-false");
+            mainSidebar.classList.remove("mainSidebar-xs");
         }
     },[sidebarExpand])
 
     //following useEffect expand and contract the sidebar
     
-    const changeSidebarExpand = () =>{
-        setSidebarExpand(true);
-    }
+    // const changeSidebarExpand = () =>{
+    //     sidebarExpand && callFunc
+    // }
+    //onclick on li in sidebar , sidebar will expand
 
     return (
         <>
-            <div className='sidebar d-sm-none d-md-block d-none d-sm-block'>
+            <div className='sidebar-expand-false' id='expand'>
                 <ul>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("داشبورد")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={dashboard} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("اعتبار سازمانی")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={organizationalCredit} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("تامیین اجتماعی")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={socialSecurity} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("بانکداری باز")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={openBanking} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("اداره پست")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={postOffice} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("اعتبار سنجی")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={validation} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("صدور کارت")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={cardIssuance} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("کیف پول")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={wallet} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("فروش اقساطی")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={leasing} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("چک صیادی")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={fishingCheck} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("قبوض و شارژ")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={billAndCharge} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                        placement="left"
-                        delay={{ show: 250, hide: 250 }}
-                        overlay={renderTooltip("خروج از حساب")}
-                        onEntering={entering}
-                    >
-                        <li onClick={changeSidebarExpand}>
-                            <Image src={logout} alt="sidebar list icons"/>
-                        </li>
-                    </OverlayTrigger>
+                    {chosenList.map(item =>
+                        <li key={item.key}>
+                            <Link to={item.link}>
+                                {item.name}
+                            </Link>
+                        </li>    
+                    )}
                 </ul>
             </div>
-            <div className='sidebar-expand-false' id='expand'>
-
+            <div className='sidebar' id='mainSidebar'>
+                <ul>
+                    {MainSidebarListGroup.map(item => 
+                        <OverlayTrigger
+                        placement="left"
+                        delay={{ show: 250, hide: 250 }}
+                        overlay={renderTooltip(item.name)}
+                        onEntering={entering}
+                        key={item.key}
+                        >
+                            <div onClick={()=> !sidebarExpand && callFunc()} >
+                                <li onClick={()=> setChoseList(item.onClick)} >
+                                    <Image src={item.img} alt="sidebar list icons" />
+                                </li>
+                            </div>
+                        </OverlayTrigger>
+                    )}
+                </ul>
             </div>
         </>
     );

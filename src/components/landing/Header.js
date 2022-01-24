@@ -15,8 +15,9 @@ const Header = ({callFunc, sidebarExpand}) => {
 
     const [toggleMenuIcon , setToggleMenuIcon] = useState(menuIcon);
     useEffect(()=>{
-        sidebarExpand ? setToggleMenuIcon(closeIcon) : setToggleMenuIcon(menuIcon)  
+        sidebarExpand ? setToggleMenuIcon(closeIcon) : setToggleMenuIcon(menuIcon);
     },[sidebarExpand])
+
 
     return (
         <Container className='header' fluid>
