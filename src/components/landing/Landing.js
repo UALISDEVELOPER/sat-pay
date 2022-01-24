@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+import {Switch, Route} from "react-router-dom"
+
 //bootstrap
 import { Col, Row , Container} from "react-bootstrap"
 
 //components
 import Header from './Header';
 import Sidebar from './Sidebar';
+
+//openBanking components
+import IbanInquiry from './openBankingComponents/IbanInquiry';
 
 //styles
 import "./styles/landing.scss";
@@ -32,13 +37,16 @@ const Landing = () => {
             <Sidebar sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} callFunc={expandSidebar} />
             <Header callFunc={expandSidebar} sidebarExpand={sidebarExpand}/>
             <Container className='main-container' fluid>
-                <Row>
+                {/* <Row>
                     <Col id='main-content' className='main-content'>
-                        <Row>
-                            
-                        </Row>
+                        <Row> */}
+                            <Switch>
+                                <Route path="/pishkhan/iban-inquiry" component={IbanInquiry}/>
+                            </Switch>
+                            {/* <IbanInquiry/> */}
+                        {/* </Row>
                     </Col>
-                </Row>
+                </Row> */}
             </Container>
         </>
     );

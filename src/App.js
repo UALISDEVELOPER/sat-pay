@@ -14,6 +14,8 @@ import MobileLogin from './components/auth/MobileLogin';
 import UsernameLogin from './components/auth/UsernameLogin';
 import Landing from './components/landing/Landing';
 
+// import IbanInquiry from './components/landing/openBankingComponents/IbanInquiry';
+
 
 const App = () => {
   return (
@@ -21,6 +23,7 @@ const App = () => {
         <Switch>
             <Route path="/pishkhan" component={Landing}/>
             <Route path="/login-by-username" component={UsernameLogin}/>
+            {/* <Route path="/iban-inquiry" component={IbanInquiry}/> */}
             <Route path="/" component={MobileLogin}/>
         </Switch>
     </Container>

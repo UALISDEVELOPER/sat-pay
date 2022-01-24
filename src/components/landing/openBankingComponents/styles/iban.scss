@@ -1,0 +1,50 @@
+.ibanContainer{
+    padding: 0;
+    margin-top: 20px;
+    .iban-div{
+        background-color: #ffff;
+        padding: 25px;
+        border: 1px solid #b8b8b8;
+        border-radius: 5px;
+        box-shadow: 0px 5px 20px 0px #000;
+        margin-bottom: 30px;
+        .heading{
+            border-bottom: 1px solid #b8b8b8 ;
+            .priceDiv{
+                text-align: left;
+            }
+            .subjectDiv{
+                text-align: right;
+            }
+        }
+        .imageDiv{
+            img{
+                width: 70%;
+                margin: auto;
+            }
+        }
+        .textDiv{
+            text-align: center;
+            margin-top: 10px;
+            border-bottom: 1px solid #b8b8b8 ;
+        }
+        .subjectDiv{
+            text-align: right;
+            margin-top: 10px;
+        }
+        input{
+            text-align: center;
+        }
+        input::placeholder{
+            text-align: center;
+        }
+        button{
+            margin-top: 15px;
+            width: 150px;
+        }
+        .buttonDiv{
+            text-align: right;
+            // float: right;
+        }
+    }
+}

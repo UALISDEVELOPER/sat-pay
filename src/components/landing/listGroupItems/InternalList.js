@@ -76,7 +76,7 @@ export const openBankingList = [
     {
         key : 4,
         name : "استعلام شماره شبا",
-        link : ""
+        link : "/pishkhan/iban-inquiry"
     },
     {
         key : 5,

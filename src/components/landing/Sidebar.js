@@ -29,7 +29,7 @@ const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
     //////
     // const [mainSidebarListGroup , setMainSidebarListGroup] = useState(listGroup);
     
-    const renderTooltip = (props) => (
+    const renderTooltip = (props) => ( 
         <Tooltip id="button-tooltip" {...props}>
            {props}
         </Tooltip>
