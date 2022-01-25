@@ -24,6 +24,7 @@ import {walletList} from "../listGroupItems/InternalList";
 import {leasingList} from "../listGroupItems/InternalList";
 import {fishingCheckList} from "../listGroupItems/InternalList";
 import {billAndChargeList} from "../listGroupItems/InternalList";
+import {logOut} from "../listGroupItems/InternalList"
 
 export const listGroup = [
     {
@@ -96,6 +97,6 @@ export const listGroup = [
         name : "خروج از حساب",
         img : logout,
         key : 12,
-        onClick : "logout",
+        onClick : logOut,
     }
 ]

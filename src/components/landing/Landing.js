@@ -8,6 +8,7 @@ import { Col, Row , Container} from "react-bootstrap"
 //components
 import Header from './Header';
 import Sidebar from './Sidebar';
+import NotAvailable from './NotAvailable';
 
 //openBanking components
 import IbanInquiry from './openBankingComponents/IbanInquiry';
@@ -37,16 +38,10 @@ const Landing = () => {
             <Sidebar sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} callFunc={expandSidebar} />
             <Header callFunc={expandSidebar} sidebarExpand={sidebarExpand}/>
             <Container className='main-container' fluid>
-                {/* <Row>
-                    <Col id='main-content' className='main-content'>
-                        <Row> */}
-                            <Switch>
-                                <Route path="/pishkhan/iban-inquiry" component={IbanInquiry}/>
-                            </Switch>
-                            {/* <IbanInquiry/> */}
-                        {/* </Row>
-                    </Col>
-                </Row> */}
+                <Switch>
+                    <Route path="/pishkhan/iban-inquiry" component={IbanInquiry}/>
+                    <Route path="/pishkhan/not-available" component={NotAvailable}/>
+                </Switch>
             </Container>
         </>
     );
