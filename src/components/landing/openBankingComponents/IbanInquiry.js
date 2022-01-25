@@ -26,22 +26,35 @@ const IbanInquiry = () => {
     }
 
     const sendData = () =>{
-        // const IbanNumber = {
-        //     // "iban": data.ibanNum
-        //     "iban": "IR320160000000000147234782"
-        //     };
-        // axios.post("https://micro.satpay.ir/api/open-banking/v1/iban/inquiry", IbanNumber)
-        //     .then(response => console.log(response))
-        fetch('https://micro.satpay.ir/api/open-banking/v1/iban/inquiry', {
+    //     const IbanNumber = {
+    //         // "iban": data.ibanNum
+    //         "iban": "IR320160000000000147234782"
+    //         };
+    //     axios.post("https://micro.satpay.ir/api/open-banking/v1/iban/inquiry", IbanNumber)
+    //         .then(response => console.log(response))
+    //----------------------------
+    // fetch('https://micro.satpay.ir/api/oauth/refresh-token', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         "refreshAPIkey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWYwMmEyNTdjYmIxYTAwMTkxOTY1ZmQiLCJ1c2VyTmFtZSI6IkFsaS1HaG9yYmFuaTAzIiwiSVAiOlsiNS4yMTcuMjUyLjIyOCJdLCJlbWFpbCI6IjAzYWxpZ2hvcmJhbmlAZ21haWwuY29tIiwicm9sZSI6ImRldmVsb3BlciIsImFwcE5hbWUiOiJzYXRwYXktdGVzdCIsImlhdCI6MTY0MzEyOTc4NiwiZXhwIjoyNDIwNzI5Nzg2fQ.tYQ3vh0leS8QnvvvR4J8B_KE8-l4EV3-4bN4dc9XvR8"
+    //     }),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    // })
+    // .then((response) => response.json())
+    // .then((json) => console.log(json));
+        fetch('https://micro.satpay.ir/api/open-banking/v1/card-iban/convert', {
             method: 'POST',
             body: JSON.stringify({
-                "iban": "IR67 0160 0000 0000 0777 8310 55"
-            }),
+                card : 6104337422405355
+              }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Accept' : 'application/json',
-                'Authorization' : 'Bearer <token_here>'
+                'apikey' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWYwMmEyNTdjYmIxYTAwMTkxOTY1ZmQiLCJ1c2VyTmFtZSI6IkFsaS1HaG9yYmFuaTAzIiwiSVAiOlsiNS4yMTcuMjUyLjIyOCJdLCJlbWFpbCI6IjAzYWxpZ2hvcmJhbmlAZ21haWwuY29tIiwicm9sZSI6ImRldmVsb3BlciIsImFwcE5hbWUiOiJzYXRwYXktdGVzdCIsImlhdCI6MTY0MzEyOTc4NiwiZXhwIjoxNjQzNTYxNzg2fQ.qLSvUhvZUjrWWX2OsW4e9Jg7RLktN1XN9kZTTiNdhe8' ,
+                'appname' : 'satpay-test'
             },
+            
         })
         .then((response) => response.json())
         .then((json) => console.log(json));
@@ -50,16 +63,16 @@ const IbanInquiry = () => {
 
 
     return (
-        <Container className='ibanContainer' fluid>
+        <Container className='openBankingContainer' fluid>
             <Row>
                 <Col md={3}></Col>
                 <Col md={6}>
-                    <div className='iban-div'>
+                    <div className='openBanking-div'>
                         <Row className='heading'>
-                            <Col xs className='priceDiv'>
-                                <p>300تومان</p>
+                            <Col xs={4} className='priceDiv'>
+                                <p>۳۰۰ تومان</p>
                             </Col>
-                            <Col xs className='subjectDiv'>
+                            <Col xs={8} className='subjectDiv'>
                                 <p>سرویس استعلام شماره شبا</p>
                             </Col>
                         </Row>

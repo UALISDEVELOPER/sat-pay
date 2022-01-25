@@ -1,7 +1,7 @@
-.ibanContainer{
+.openBankingContainer{
     padding: 0;
     margin-top: 20px;
-    .iban-div{
+    .openBanking-div{
         background-color: #ffff;
         padding: 25px;
         border: 1px solid #b8b8b8;
@@ -12,15 +12,18 @@
             border-bottom: 1px solid #b8b8b8 ;
             .priceDiv{
                 text-align: left;
+                float: left;
             }
             .subjectDiv{
                 text-align: right;
+                margin: 0px !important;
             }
         }
         .imageDiv{
             img{
-                width: 70%;
+                width: 300px;
                 margin: auto;
+                height: 100px;
             }
         }
         .textDiv{
