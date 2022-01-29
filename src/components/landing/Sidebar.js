@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 //sidebar internal dashboard list
-import {dashboardList} from "./listGroupItems/InternalList";
+import {openBankingList} from "./listGroupItems/InternalList";
 
 //bootstrap
 import {Tooltip, OverlayTrigger, Image } from "react-bootstrap";
@@ -18,7 +18,7 @@ const MainSidebarListGroup = listGroup;
 
 const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
 
-    const [chosenList, setChosenList] = useState(dashboardList);
+    const [chosenList, setChosenList] = useState(openBankingList);
     
     const renderTooltip = (props) => ( 
         <Tooltip id="button-tooltip" {...props}>

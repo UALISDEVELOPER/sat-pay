@@ -1,39 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState }  from 'react';
 
 //axios
 import axios from "axios";
 
 //bootstrap
-import {Container, Row, Col , Image ,Button ,Form, Spinner, Accordion } from "react-bootstrap"
+import {Container, Row, Col , Image ,Button ,Form, Spinner, Accordion, Table } from "react-bootstrap"
 
 //styles
-import "./styles/iban.scss";
+import "./styles/backCheques.scss";
 
 //images
 import satpayLogo from "./styles/img/satpay-logo.png";
 
-const IbanInquiry = () => {
-
+const BackCheques = () => {
     const [data, setData] = useState({
-        card:"",
+        nationalID : ""
     })
 
     const [fetchedData , setFetchedData] = useState({
         status : false,
         loading : false,
 
-        IBAN : "", 
-        bankName : "",
-        card : "" ,
-        deposit : "",
-        depositDescription : "",
-        //حساب فعال است 
-        depositComment : "" ,
-        // پس انداز عادی
-        depositOwners : "" ,
+        name : "",
+        chequeList : [],
     })
 
     const [serverError, setServerError] = useState(false);
+
+    useEffect(()=>{
+        console.log(fetchedData);
+    })
 
     const changeHandler = (event) =>{
         setData({
@@ -49,27 +45,22 @@ const IbanInquiry = () => {
                 'appname' : 'satpay-test'
             }
         }
-        const URL = "https://micro.satpay.ir/api/open-banking/v1/card-iban/convert"
+        const URL = "https://micro.satpay.ir/api/open-banking/v1/back-cheques/inquiry"
 
         setFetchedData({loading : true})
 
         axios.post(URL , data , config)
             .then(response => {
                 console.log(response);
-                const {IBAN ,bankName ,card, depositDescription, depositComment , depositOwners ,deposit} = response.data.description.cardToIban.result ;
+                const {name , chequeList} = response.data.description.backChequesInquiry.result ;
                 setFetchedData({
                     status : true,
                     loading : false,
-
-                    IBAN : IBAN, 
-                    bankName : bankName,
-                    card : card ,
-                    deposit :deposit,
-                    depositDescription : depositDescription ,
-                    //حساب فعال است 
-                    depositComment :depositComment  ,
-                    // پس انداز عادی
-                    depositOwners : `${depositOwners[0].firstName} ${depositOwners[0].lastName}` ,
+                    
+                    name : name,
+                    chequeList : chequeList,
+                
+                
                 })
                 console.log(fetchedData);
                 setServerError(false);
@@ -78,7 +69,6 @@ const IbanInquiry = () => {
                 console.log(error.message);
                 setServerError(error.message)
                 setFetchedData({
-                    // status : true,
                     loading:false
                 })
             })
@@ -101,7 +91,7 @@ const IbanInquiry = () => {
                                 <p>۳۰۰ تومان</p>
                             </Col>
                             <Col xs={8} className='subjectDiv'>
-                                <p>سرویس استعلام شماره شبا با استفاده از شماره کارت</p>
+                                <p>سرویس استعلام چک برگشتی</p>
                             </Col>
                         </Row>
                         <Row className='imageDiv'>
@@ -115,13 +105,29 @@ const IbanInquiry = () => {
                                 <Col>
                                     <Accordion defaultActiveKey="0">
                                         <Accordion.Item eventKey="0" className='item'>
-                                            <Accordion.Header className='itemButton'>نمایش اطلاعات کارت {fetchedData.card}</Accordion.Header>
+                                            <Accordion.Header className='itemButton'><label>{fetchedData.name}</label>نمایش لیست چک های برگشتی</Accordion.Header>
                                             <Accordion.Body className='itemBody'>
-                                                <div>
-                                                    <p><label> {fetchedData.IBAN} </label>: شماره شبا</p>
-                                                    <p><label> {fetchedData.bankName} </label>: نام بانک</p>
-                                                    <p><label> {fetchedData.deposit} </label>: شماره حساب</p>
-                                                    <p><label> {fetchedData.depositOwners} </label>: مالک حساب</p>
+                                                <div className='tableDiv'>
+                                                    <Table striped bordered hover variant="dark">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>شماره حساب</th>
+                                                                <th>نام بانک</th>
+                                                                <th>مبلغ</th>
+                                                                <th>#</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {fetchedData.chequeList.map(item => 
+                                                            <tr>
+                                                                <td>{item.accountNumber}</td>
+                                                                <td>{item.branchDescription.split("-")[0]}</td>
+                                                                <td>{item.amount}</td>
+                                                                <td>1</td>
+                                                            </tr>
+                                                            )}
+                                                        </tbody>
+                                                    </Table>
                                                 </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
@@ -138,10 +144,10 @@ const IbanInquiry = () => {
                             :
                             <div>
                                 <Row className='subjectDiv'>
-                                    <p>: شماره کارت </p>
+                                    <p>: کد ملی </p>
                                 </Row>
                                 <Row>
-                                    <Form.Control type="text" placeholder="شماره کارت" value={data.card} name='card' maxLength={16} onChange={changeHandler}/>
+                                    <Form.Control type="text" placeholder="کد ملی" value={data.nationalID} name='nationalID' maxLength={11} onChange={changeHandler}/>
                                 </Row>
                                 <Row className='buttonDiv'>
                                     <Col>
@@ -167,4 +173,4 @@ const IbanInquiry = () => {
     );
 };
 
-export default IbanInquiry;
+export default BackCheques;

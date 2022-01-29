@@ -66,22 +66,22 @@ export const openBankingList = [
     {
         key : 2,
         name : "تبدیل شماره کارت به شماره شبا",
-        link : "/pishkhan/not-available"
+        link : "/pishkhan/iban-inquiry"
     },
     {
         key : 3,
         name : "تبدیل شماره کارت به شماره حساب",
         link : "/pishkhan/not-available"
     },
-    {
-        key : 4,
-        name : " استعلام شماره شبا با استفاده از شماره کارت",
-        link : "/pishkhan/iban-inquiry"
-    },
+    // {
+    //     key : 4,
+    //     name : "!!! استعلام شماره شبا با استفاده از شماره کارت",
+    //     link : "/pishkhan/not-available"
+    // },
     {
         key : 5,
         name : "استعلام چک برگشتی",
-        link : "/pishkhan/not-available"
+        link : "/pishkhan/back-cheques-inquiry"
     },
     {
         key : 6,

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import {Switch, Route} from "react-router-dom"
 
 //bootstrap
-import { Col, Row , Container} from "react-bootstrap"
+import { Container} from "react-bootstrap"
 
 //components
 import Header from './Header';
@@ -12,6 +12,7 @@ import NotAvailable from './NotAvailable';
 
 //openBanking components
 import IbanInquiry from './openBankingComponents/IbanInquiry';
+import BackCheques from './openBankingComponents/BackCheques';
 
 //styles
 import "./styles/landing.scss";
@@ -39,6 +40,7 @@ const Landing = () => {
             <Header callFunc={expandSidebar} sidebarExpand={sidebarExpand}/>
             <Container className='main-container' fluid>
                 <Switch>
+                    <Route path="/pishkhan/back-cheques-inquiry" component={BackCheques}/>
                     <Route path="/pishkhan/iban-inquiry" component={IbanInquiry}/>
                     <Route path="/pishkhan/not-available" component={NotAvailable}/>
                 </Switch>

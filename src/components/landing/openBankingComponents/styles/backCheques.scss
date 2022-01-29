@@ -51,7 +51,9 @@
             }
             .itemBody{
                 text-align: right !important;
-                font-size: 15px;
+                .tableDiv{
+                    overflow-x: scroll;
+                }
             }
         }
         input{
