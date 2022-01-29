@@ -75,7 +75,7 @@ export const openBankingList = [
     },
     {
         key : 4,
-        name : "استعلام شماره شبا",
+        name : " استعلام شماره شبا با استفاده از شماره کارت",
         link : "/pishkhan/iban-inquiry"
     },
     {
