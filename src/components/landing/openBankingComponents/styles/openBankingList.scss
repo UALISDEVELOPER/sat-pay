@@ -16,7 +16,7 @@
         .servicesDiv{
             position: relative;
             text-align: center;
-            height: 200px;
+            height: 100px;
             margin-top: 10px;
             background-color: #2d8ac4;
             margin-bottom: 10px;
@@ -26,18 +26,20 @@
             padding: 0;
             cursor: pointer;
             transition: all .5s;
-            p{
-                margin-top: 15px;
-                color: white;
-                text-decoration: none;
-            }
             img{
-                width:80px ;
+                width:40px ;
                 margin: auto;
                 text-align: center;
                 display:flex;
                 align-content: center;
                 justify-content: center;
+                margin-top: 5px;
+            }
+            p{
+                margin-top: 5px;
+                color: white;
+                text-decoration: none;
+                font-size: small;
             }
         }
         .servicesDiv:hover{

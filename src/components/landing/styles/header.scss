@@ -1,6 +1,6 @@
 .header{
     background-color: #2A78A8;
-    height: 60px;
+    height: 50px;
     text-align: right;
     box-shadow: 0px 5px 30px 0px #00000080;
     position: fixed;
@@ -27,5 +27,15 @@
         font-size: 18px;
         width: fit-content;
         float: right !important;
+    }
+    @media only screen and (max-width: 560px) {
+        #userDiv{
+            font-size: 12px;
+            margin-left: 15px;
+            margin-top: 11px;
+        }
+        #creditDiv{
+            font-size: 13px;
+        }
     }
 }

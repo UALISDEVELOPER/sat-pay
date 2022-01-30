@@ -23,14 +23,10 @@ const Header = ({callFunc, sidebarExpand}) => {
         <Container className='header' fluid>
             <Row>
                 <div>
-                    {/* <div className='sidebar-button' onClick={callFunc}>
-                        <Image src={toggleMenuIcon} alt="sidebar button icon"/>
-                    </div>
-                     */}
-                    <div className='userDiv'>
+                    <div className='userDiv' id='userDiv'>
                         <p> HAMID HAMEDI  <Image src={userIcon} alt="user icon"/></p>
                     </div>
-                    <div className='creditDiv'>
+                    <div className='creditDiv' id="creditDiv">
                         <p>اعتبار شما: 8888 تومان</p>
                     </div>
                 </div>

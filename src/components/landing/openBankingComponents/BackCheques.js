@@ -119,7 +119,7 @@ const BackCheques = () => {
                                                         </thead>
                                                         <tbody>
                                                             {fetchedData.chequeList.map(item => 
-                                                            <tr>
+                                                            <tr key={item.id}>
                                                                 <td>{item.accountNumber}</td>
                                                                 <td>{item.branchDescription.split("-")[0]}</td>
                                                                 <td>{item.amount}</td>
