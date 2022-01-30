@@ -23,10 +23,10 @@ const Header = ({callFunc, sidebarExpand}) => {
         <Container className='header' fluid>
             <Row>
                 <div>
-                    <div className='sidebar-button' onClick={callFunc}>
+                    {/* <div className='sidebar-button' onClick={callFunc}>
                         <Image src={toggleMenuIcon} alt="sidebar button icon"/>
                     </div>
-                    
+                     */}
                     <div className='userDiv'>
                         <p> HAMID HAMEDI  <Image src={userIcon} alt="user icon"/></p>
                     </div>

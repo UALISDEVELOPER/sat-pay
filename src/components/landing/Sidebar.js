@@ -37,51 +37,51 @@ const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
     //this function is for changing tooltips styles
 
 
-    useEffect(()=>{
-        const expandedSidebar = document.getElementById("expand");
-        const mainSidebar = document.getElementById("mainSidebar") ;
-        // const [mainSidebarWidth, setMainSidebarWidth] = useState( document.getElementById("mainSidebar").style.width="0px");
-        if(sidebarExpand ){
-            expandedSidebar.removeAttribute("class");
-            expandedSidebar.classList.add("sidebar-expand-true");
-            mainSidebar.classList.add("mainSidebar-xs");
-        }else{
-            expandedSidebar.removeAttribute("class");
-            expandedSidebar.classList.add("sidebar-expand-false");
-            mainSidebar.classList.remove("mainSidebar-xs");
-        }
-    },[sidebarExpand])
+    // useEffect(()=>{
+    //     // const expandedSidebar = document.getElementById("expand");
+    //     const mainSidebar = document.getElementById("mainSidebar") ;
+    //     // const [mainSidebarWidth, setMainSidebarWidth] = useState( document.getElementById("mainSidebar").style.width="0px");
+    //     if(sidebarExpand ){
+    //         // expandedSidebar.removeAttribute("class");
+    //         // expandedSidebar.classList.add("sidebar-expand-true");
+    //         mainSidebar.classList.add("mainSidebar-xs");
+    //     }else{
+    //         // expandedSidebar.removeAttribute("class");
+    //         // expandedSidebar.classList.add("sidebar-expand-false");
+    //         mainSidebar.classList.remove("mainSidebar-xs");
+    //     }
+    // },[sidebarExpand])
 
     //following useEffect expand and contract the sidebar
 
     return (
         <>
-            <div className='sidebar-expand-false' id='expand'>
+            {/* <div className='sidebar-expand-false' id='expand'>
                 <ul>
                     {chosenList.map(item =>
                         <Link to={item.link} key={item.key}>
                             <li>
                                     {item.name}
                             </li>    
-                        </Link>
+                        // </Link>
                     )}
                 </ul>
-            </div>
+            </div> */}
             <div className='sidebar' id='mainSidebar'>
                 <ul>
                     {MainSidebarListGroup.map(item => 
                         <OverlayTrigger
-                        placement="left"
+                        placement="top"
                         delay={{ show: 250, hide: 250 }}
                         overlay={renderTooltip(item.name)}
                         onEntering={entering}
                         key={item.key}
                         >
-                            <div onClick={()=> !sidebarExpand && callFunc()} >
+                            {/* <div onClick={()=> !sidebarExpand && callFunc()} > */}
                                 <li onClick={()=> setChosenList(item.onClick)} >
                                     <Image src={item.img} alt="sidebar list icons" />
                                 </li>
-                            </div>
+                            {/* </div> */}
                         </OverlayTrigger>
                     )}
                 </ul>
