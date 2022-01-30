@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve" width="512px" height="512px"><g><g>
+	<g>
+		<path d="M424,64H56C25.087,64.035,0.035,89.087,0,120v240c0.035,30.913,25.087,55.965,56,56h368c30.913-0.035,55.965-25.087,56-56    V120C479.965,89.087,454.913,64.035,424,64z M464,280H328c-22.091,0-40-17.909-40-40s17.909-40,40-40h136V280z M464,184H328    c-30.928,0-56,25.072-56,56c0,30.928,25.072,56,56,56h136v64c-0.026,22.08-17.92,39.974-40,40H56c-22.08-0.026-39.974-17.92-40-40    V120c0.026-22.08,17.92-39.974,40-40h368c22.08,0.026,39.974,17.92,40,40V184z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M328,208v16c8.837,0,16,7.163,16,16s-7.163,16-16,16v16c17.673,0,32-14.327,32-32S345.673,208,328,208z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<rect x="48" y="104" width="32" height="16" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<rect x="96" y="104" width="64" height="16" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<rect x="48" y="128" width="112" height="16" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M424,336c-13.255,0-24,10.745-24,24s10.745,24,24,24s24-10.745,24-24S437.255,336,424,336z M424,368c-4.418,0-8-3.582-8-8    s3.582-8,8-8s8,3.582,8,8S428.418,368,424,368z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M424,96c-13.255,0-24,10.745-24,24s10.745,24,24,24s24-10.745,24-24S437.255,96,424,96z M424,128c-4.418,0-8-3.582-8-8    s3.582-8,8-8s8,3.582,8,8S428.418,128,424,128z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g></g> </svg>

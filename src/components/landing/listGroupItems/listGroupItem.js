@@ -32,71 +32,83 @@ export const listGroup = [
         img : dashboard,
         key : 1,
         onClick : dashboardList,
+        link : "/pishkhan/dashboardList"
     },
     {
         name : "اعتبار سازمانی",
         img : organizationalCredit,
         key : 2,
         onClick : organizationalCreditList,
+        link : "/pishkhan/organizationalCreditList"
     },
     {
         name : "تامین اجتماعی",
         img : socialSecurity,
         key : 3,
         onClick : socialSecurityList,
+        link : "/pishkhan/socialSecurityList"
     },
     {
         name : "بانکداری باز",
         img : openBanking,
         key : 4,
         onClick : openBankingList,
+        link : "/pishkhan/openBankingList"
     },
     {
         name : "اداره پست",
         img : postOffice,
         key : 5,
         onClick : postOfficeList,
+        link : "/pishkhan/postOfficeList"
     },
     {
         name : "اعتبار سنجی",
         img : validation,
         key : 6,
         onClick : validationList,
+        link : "/pishkhan/validationList"
     },
     {
         name : "صدور کارت",
         img : cardIssuance,
         key : 7,
         onClick : cardIssuanceList ,
+        link : "/pishkhan/cardIssuanceList"
     },
     {
         name : "کیف پول",
         img : wallet,
         key : 8,
         onClick : walletList ,
+        link : "/pishkhan/walletList"
     },
     {
         name : "فروش اقساطی",
         img : leasing,
         key : 9,
         onClick : leasingList ,
+        link : "/pishkhan/leasingList"
     },
     {
         name : "چک صیادی",
         img : fishingCheck,
         key : 10,
         onClick : fishingCheckList ,
+        link : "/pishkhan/fishingCheckList"
     },
     {
         name : "قبوض و شارژ",
         img : billAndCharge,
         key : 11,
         onClick : billAndChargeList ,
+        link : "/pishkhan/billAndChargeList"
     },
     {
         name : "خروج از حساب",
         img : logout,
         key : 12,
         onClick : logOut,
+        link : "/login-by-username"
     }
 ]

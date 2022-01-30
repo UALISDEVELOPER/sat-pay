@@ -16,9 +16,9 @@ import {listGroup} from "./listGroupItems/listGroupItem";
 const MainSidebarListGroup = listGroup;
 
 
-const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
+const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc,}) => {
 
-    const [chosenList, setChosenList] = useState(openBankingList);
+    // const [chosenList, setChosenList] = useState(openBankingList);
     
     const renderTooltip = (props) => ( 
         <Tooltip id="button-tooltip" {...props}>
@@ -78,10 +78,18 @@ const Sidebar = ({sidebarExpand ,setSidebarExpand, callFunc}) => {
                         key={item.key}
                         >
                             {/* <div onClick={()=> !sidebarExpand && callFunc()} > */}
+                            {/* <Link path="/pishkhan/list-of-services">
                                 <li onClick={()=> setChosenList(item.onClick)} >
                                     <Image src={item.img} alt="sidebar list icons" />
                                 </li>
+                            </Link> */}
                             {/* </div> */}
+
+                            <Link to={item.link}>
+                                <li >
+                                    <Image src={item.img} alt="sidebar list icons" />
+                                </li>
+                            </Link>
                         </OverlayTrigger>
                     )}
                 </ul>
