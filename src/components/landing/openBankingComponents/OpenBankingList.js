@@ -25,10 +25,9 @@ import billAndCharge from "../styles/img/Bills-and-charges.png";
 
 
 const OpenBankingList = () => {
-    const [list , setList] = useState("");
 
     return (
-        <Container fluid="md" className="justify-content-center">
+        <Container fluid="md" className="justify-content-center hello">
             <Row>
                 <Col lg={2}></Col>
                 <Col lg={8} className='openBanking-row'>
@@ -49,12 +48,6 @@ const OpenBankingList = () => {
                                     <Image src={openBanking} alt='openBanking'/>
                                 </div>
                             </Link>
-                        </Col>
-                        <Col xs={6}>
-                            <div className='servicesDiv'>
-                                <p>تبدیل شماره کارت به شماره حساب</p>
-                                <Image src={openBanking} alt='openBanking'/>
-                            </div>
                         </Col>
                         <Col xs={6}>
                             <Link to="/pishkhan/back-cheques-inquiry">
@@ -96,8 +89,14 @@ const OpenBankingList = () => {
                         </Col>
                         <Col xs={6}>
                             <div className='servicesDiv'>
-                                <Image src={openBanking} alt='openBanking'/>
                                 <p>انطباق کد ملی و شماره شبا</p>
+                                <Image src={openBanking} alt='openBanking'/>
+                            </div>
+                        </Col>
+                        <Col xs={6}>
+                            <div className='servicesDiv'>
+                                <p>تبدیل شماره کارت به شماره حساب</p>
+                                <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
                     </Row>

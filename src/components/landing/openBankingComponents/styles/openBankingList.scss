@@ -15,20 +15,21 @@
         margin-top: 15px;
         .servicesDiv{
             position: relative;
-            // width: 100%;
             text-align: center;
             height: 200px;
             margin-top: 10px;
-            background-color: #c0c0c0;
-            // margin: 0px;
+            background-color: #2d8ac4;
             margin-bottom: 10px;
             border: 1px solid #b8b8b8;
             border-radius: 10px;
             box-shadow: 0px 2px 10px 0px #000;
             padding: 0;
             cursor: pointer;
+            transition: all .5s;
             p{
                 margin-top: 15px;
+                color: white;
+                text-decoration: none;
             }
             img{
                 width:80px ;
@@ -38,6 +39,9 @@
                 align-content: center;
                 justify-content: center;
             }
+        }
+        .servicesDiv:hover{
+            background-color: #32698b;
         }
     }
 }

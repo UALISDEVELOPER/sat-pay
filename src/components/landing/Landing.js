@@ -20,34 +20,15 @@ import "./styles/landing.scss";
 
 const Landing = () => {
 
-    // const [sidebarExpand, setSidebarExpand] = useState(true);
-    // const expandSidebar = ()=>{
-    //     if (sidebarExpand){
-    //         setSidebarExpand(false)
-    //     }else{
-    //         setSidebarExpand(true)
-    //     }
-    //     // console.log("kjsdjkhjk");
-    // }
-    // // following function help to expand and contract the sidebar
-
-    // useEffect(()=>{
-    //     console.log(sidebarExpand);
-    // })
-
-    const [chosenList, setChosenList] = useState()
-
     return (
         <>
-            {/* <Sidebar sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} callFunc={expandSidebar} /> */}
-            {/* <Header callFunc={expandSidebar} sidebarExpand={sidebarExpand}/> */}
             <Header/>
             <Container className='main-container' fluid>
                 <div className='main-content'>
                     <Switch>
                         <Route path="/pishkhan/back-cheques-inquiry" component={BackCheques}/>
                         <Route path="/pishkhan/iban-inquiry" component={IbanInquiry}/>
-                        {/* <Route path="/pishkhan/not-available" component={NotAvailable}/> */}
+                        <Route path="/pishkhan/not-available" component={NotAvailable}/>
                         {/* ********services pages upto here******** */}
 
                         <Route path="/pishkhan/dashboardList" component={NotAvailable}/>
@@ -66,7 +47,7 @@ const Landing = () => {
                 </div>
             </Container>
             <Row className="justify-content-center">
-                <Sidebar chosenList={chosenList}/>
+                <Sidebar/>
             </Row>
         </>
     );
