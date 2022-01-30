@@ -30,19 +30,19 @@ const OpenBankingList = () => {
     return (
         <Container fluid="md" className="justify-content-center">
             <Row>
-                <Col md={2}></Col>
-                <Col md={8} className='openBanking-row'>
+                <Col lg={2}></Col>
+                <Col lg={8} className='openBanking-row'>
                     <Row>
                         <Image className='satpay-logo' src={satpayLogo} alt='satpay logo'/>
                     </Row>
                     <Row className="justify-content-center servicesRow">
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>تبدیل شماره حساب به شماره شبا</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <Link to="/pishkhan/iban-inquiry">
                                 <div className='servicesDiv'>
                                     <p>تبدیل شماره کارت به شماره شبا</p>
@@ -50,13 +50,13 @@ const OpenBankingList = () => {
                                 </div>
                             </Link>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>تبدیل شماره کارت به شماره حساب</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <Link to="/pishkhan/back-cheques-inquiry">
                                 <div className='servicesDiv'>
                                     <p>استعلام چک برگشتی</p>
@@ -64,37 +64,37 @@ const OpenBankingList = () => {
                                 </div>
                             </Link>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>استعلام وام گیرنده</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>استعلام خلافی خودرو</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>لیست استعلام ها</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>ثبت نام کد مالیاتی</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <p>استعلام کد مالیاتی</p>
                                 <Image src={openBanking} alt='openBanking'/>
                             </div>
                         </Col>
-                        <Col xs={4}>
+                        <Col xs={6}>
                             <div className='servicesDiv'>
                                 <Image src={openBanking} alt='openBanking'/>
                                 <p>انطباق کد ملی و شماره شبا</p>
